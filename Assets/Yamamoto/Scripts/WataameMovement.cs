@@ -6,7 +6,7 @@ public class WataameMovement : MonoBehaviour
 {
     Vector3 pos;
     [SerializeField]
-    private float MovementVolume;
+    private int MovementVolume;
     [SerializeField]
     private int COUNT;
     private bool WATAAME;
@@ -29,14 +29,14 @@ public class WataameMovement : MonoBehaviour
         }
 
         if(WATAAME == true){
-         pos.x += MovementVolume;
+         pos.x += 0.1f;
              this.transform.position = pos;
-             CountWataame += 1;
+             CountWataame += MovementVolume;
         }
         if(WATAAME == false){
-         pos.x -= MovementVolume;
+         pos.x -= 0.1f;
              this.transform.position = pos;
-             CountWataame -= 1;
+             CountWataame -= MovementVolume;
         }
     }
 }

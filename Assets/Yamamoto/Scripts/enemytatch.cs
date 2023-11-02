@@ -10,27 +10,16 @@ public class enemytatch : MonoBehaviour
     private LifeGaugeCharacter lifeGaugeCharacter;
  
     private bool isInvincible;
-    public AudioClip sound1;
-    AudioSource audioSource;
-    // Start is called before the first frame update
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();}
 
-   
-
+    
    void OnCollisionEnter(Collision collision)
 {
-    
   if (collision.gameObject.CompareTag("Enemy"))
   {
       if (isInvincible) {
         return;
     }
-        audioSource.PlayOneShot(sound1);
+        Debug.Log("ダメージ");
         lifeGaugeCharacter.Damage(1);
  
     isInvincible = true;

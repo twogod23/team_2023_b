@@ -6,14 +6,15 @@ public class Enemy : MonoBehaviour
 {
  [SerializeField]
 private EnemyStatus EnemyStatus;
- 
+ [SerializeField]
+private Shot Shot;
 
  void OnCollisionEnter(Collision collision)
 {
   if (collision.gameObject.CompareTag("Bullet"))
   {//damage
     EnemyStatus.SetHp(EnemyStatus.GetHp() - 1);
-   
+    Shot.HitBullet();
    
   }
 
